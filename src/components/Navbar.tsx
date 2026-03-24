@@ -38,7 +38,7 @@ export default function Navbar() {
             </motion.a>
           ))}
           <motion.a
-            href="https://wa.me/7542878967"
+            href="https://wa.me/7542878967?text=Hi%20Forge%20Studios!%20I'd%20like%20to%20get%20started%20with%20your%20services."
             target="_blank"
             rel="noopener noreferrer"
             initial={{ opacity: 0, scale: 0.9 }}
@@ -73,7 +73,7 @@ export default function Navbar() {
             </a>
           ))}
           <a 
-            href="https://wa.me/7542878967"
+            href="https://wa.me/7542878967?text=Hi%20Forge%20Studios!%20I'd%20like%20to%20get%20started%20with%20your%20services."
             target="_blank"
             rel="noopener noreferrer"
             className="bg-mango text-ink px-6 py-4 rounded-xl text-lg font-bold text-center"

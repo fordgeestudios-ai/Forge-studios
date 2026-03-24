@@ -50,7 +50,7 @@ export default function App() {
             </h2>
             <div className="flex flex-wrap gap-4 mb-10">
               <a 
-                href="https://wa.me/7542878967" 
+                href="https://wa.me/7542878967?text=Hi%20Forge%20Studios!%20I'm%20interested%20in%20your%20branding%20and%20visibility%20services." 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="bg-mango text-ink px-8 py-4 rounded-full font-bold text-lg flex items-center gap-2 hover:bg-mango/90 transition-all hover:scale-105 shadow-xl shadow-mango/20"
@@ -58,7 +58,7 @@ export default function App() {
                 Get Started <ArrowRight size={20} />
               </a>
               <a 
-                href="https://wa.me/7542878967" 
+                href="https://wa.me/7542878967?text=Hi%20Forge%20Studios!%20I'd%20like%20to%20chat%20about%20my%20brand%20visibility." 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="bg-white border border-ink/10 text-ink px-8 py-4 rounded-full font-bold text-lg flex items-center gap-2 hover:bg-off-white transition-all"
@@ -398,7 +398,7 @@ export default function App() {
             </p>
             <div className="flex flex-wrap justify-center gap-6">
               <a 
-                href="https://wa.me/7542878967" 
+                href="https://wa.me/7542878967?text=Hi%20Forge%20Studios!%20I'm%20ready%20to%20start%20turning%20my%20business%20into%20a%20brand." 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="bg-ink text-off-white px-10 py-5 rounded-full font-bold text-xl hover:scale-105 transition-transform shadow-xl"
@@ -406,7 +406,7 @@ export default function App() {
                 Start Now
               </a>
               <a 
-                href="https://wa.me/7542878967" 
+                href="https://wa.me/7542878967?text=Hi%20Forge%20Studios!%20I'd%20like%20to%20discuss%20a%20project." 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="bg-white text-ink px-10 py-5 rounded-full font-bold text-xl hover:bg-off-white transition-colors"
@@ -444,7 +444,7 @@ export default function App() {
             <div>
               <h4 className="font-bold mb-6 uppercase tracking-widest text-sm">Connect</h4>
               <ul className="space-y-4 text-grey">
-                <li><a href="https://wa.me/7542878967" target="_blank" rel="noopener noreferrer" className="hover:text-mango transition-colors flex items-center gap-2">WhatsApp</a></li>
+                <li><a href="https://wa.me/7542878967?text=Hi%20Forge%20Studios!%20I'm%20reaching%20out%20from%20your%20website." target="_blank" rel="noopener noreferrer" className="hover:text-mango transition-colors flex items-center gap-2">WhatsApp</a></li>
                 <li><a href="https://instagram.com/yourlink" target="_blank" rel="noopener noreferrer" className="hover:text-mango transition-colors flex items-center gap-2">Instagram</a></li>
                 <li><a href="https://linkedin.com/in/yourlink" target="_blank" rel="noopener noreferrer" className="hover:text-mango transition-colors flex items-center gap-2">LinkedIn</a></li>
                 <li><a href="https://twitter.com/yourlink" target="_blank" rel="noopener noreferrer" className="hover:text-mango transition-colors flex items-center gap-2">Twitter</a></li>
