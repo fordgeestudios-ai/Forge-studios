@@ -312,6 +312,67 @@ export default function App() {
         </div>
       </section>
 
+      {/* 6.5 BRANDS WE'VE FORGED */}
+      <section className="py-24 bg-off-white/50">
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div {...fadeIn} className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl mb-4">Brands We've Forged</h2>
+            <p className="text-lg text-grey">Trusted by businesses across diverse industries.</p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                name: "Fish & Fries",
+                location: "HSR Layout",
+                type: "Restaurant",
+                desc: "Transformed their local presence into a neighborhood landmark through strategic social content.",
+                icon: <Zap className="text-mango" />
+              },
+              {
+                name: "The Moment Makers",
+                location: "Bangalore",
+                type: "Event Organization",
+                desc: "Built a high-authority brand identity that resonates with premium corporate clients.",
+                icon: <Users className="text-mango" />
+              },
+              {
+                name: "Modern Living",
+                location: "Real Estate",
+                type: "Property Group",
+                desc: "Established a consistent visibility system that turned property listings into high-intent leads.",
+                icon: <Target className="text-mango" />
+              }
+            ].map((client, i) => (
+              <motion.div 
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="bg-white p-8 rounded-3xl border border-ink/5 shadow-sm hover:shadow-xl transition-all"
+              >
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-12 h-12 bg-mango/10 rounded-xl flex items-center justify-center">
+                    {client.icon}
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold">{client.name}</h3>
+                    <p className="text-sm text-mango font-medium uppercase tracking-wider">{client.type}</p>
+                  </div>
+                </div>
+                <p className="text-grey leading-relaxed mb-4">
+                  {client.desc}
+                </p>
+                <div className="pt-4 border-t border-ink/5 text-sm text-grey/60 italic">
+                  {client.location}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* 7. DIFFERENTIATION SECTION */}
       <section className="py-24 bg-soft-yellow">
         <div className="max-w-7xl mx-auto px-6">
