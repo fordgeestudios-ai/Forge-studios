@@ -21,6 +21,7 @@ import {
   Play,
   Mail,
   Stethoscope,
+  Award,
 } from "lucide-react";
 import Navbar from "./components/Navbar";
 
@@ -31,6 +32,16 @@ const LINKEDIN = "https://www.linkedin.com/company/fordge-studios/";
 
 function wa(text: string) {
   return `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(text)}`;
+}
+
+/** Wordmark: FORDGE (yellow) + STUDIOS (black). */
+function Logo({ className = "" }: { className?: string }) {
+  return (
+    <span className={`font-display font-bold tracking-tighter ${className}`}>
+      <span className="text-mango">FORDGE</span>
+      <span className="text-ink">STUDIOS</span>
+    </span>
+  );
 }
 
 /**
@@ -91,7 +102,6 @@ type ReelItem = {
 const REELS: ReelItem[] = [
   { code: "Dac8v3lSzet", client: "Dr. Gaurav Gangwani", topic: "Spider veins explained", metric: "150K views" },
   { code: "DbGJbG9quhE", client: "Dr. Gaurav Gangwani", topic: "BPH (enlarged prostate)", metric: "50K views" },
-  { code: "DbLTDxKqDZF", client: "Dr. Gaurav Gangwani", topic: "Grades of varicocele", metric: "50K views" },
   { code: "DdB2hP-CDpq", client: "Pinhole Endovascular", topic: "When is varicose veins treated?", metric: "New" },
   { code: "DcOdBZWj0h_", client: "Toothfluencer Dental", topic: "Tooth gems", metric: "5.6K views" },
   { code: "DPsq9mYER_1", client: "The Moment Makers", topic: "Event highlight", metric: "Events" },
@@ -143,7 +153,7 @@ function ContactForm() {
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     const text =
-      `Hi Forge Studios! I'd like to discuss content for my brand.\n\n` +
+      `Hi Fordge Studios! I'd like to discuss content for my brand.\n\n` +
       `Name: ${name || "-"}\n` +
       `Profession / Business: ${work || "-"}\n` +
       `Message: ${message || "-"}`;
@@ -195,22 +205,22 @@ export default function App() {
       <Navbar />
 
       {/* 1. HERO SECTION */}
-      <section id="home" className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
+      <section id="home" className="relative pt-32 pb-16 md:pt-48 md:pb-24 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
           <div>
             <div className="inline-flex items-center gap-2 bg-mango/15 text-ink text-sm font-bold px-4 py-2 rounded-full mb-6">
-              <Stethoscope size={16} /> Content for doctors, clinics &amp; professionals
+              <Stethoscope size={16} /> For doctors, lawyers &amp; growing businesses
             </div>
             <h1 className="text-4xl md:text-6xl lg:text-7xl leading-[1.1] mb-8">
               We Turn Businesses Into <span className="text-mango">Brands</span> And Doubt Into Belief.
             </h1>
             <h2 className="text-xl md:text-2xl text-grey font-medium mb-8 max-w-xl">
-              We help doctors, clinics and professionals grow visibility, build authority, and earn
+              We help doctors, law firms and businesses grow visibility, build authority, and earn
               trust through strategic content.
             </h2>
-            <div className="flex flex-wrap gap-4 mb-10">
+            <div className="flex flex-wrap gap-4 mb-8">
               <a
-                href={wa("Hi Forge Studios! I'm interested in your content and branding services.")}
+                href={wa("Hi Fordge Studios! I'm interested in your content and branding services.")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-mango text-ink px-8 py-4 rounded-full font-bold text-lg flex items-center gap-2 hover:bg-mango/90 transition-all hover:scale-105 shadow-xl shadow-mango/20"
@@ -224,10 +234,8 @@ export default function App() {
                 <Play size={20} /> See our work
               </a>
             </div>
-            <p className="text-lg text-grey/80 max-w-lg">
-              In today’s market, attention is currency. If your business isn’t consistently seen,
-              it’s forgotten. At Forge Studios, we build content systems that make your brand
-              visible, credible, and impossible to ignore.
+            <p className="text-sm font-semibold uppercase tracking-widest text-grey/60">
+              Doctors · Clinics · Law firms · Growing businesses
             </p>
           </div>
 
@@ -248,12 +256,12 @@ export default function App() {
                   <div className="text-xs text-grey">BPH reel</div>
                 </div>
                 <div className="bg-off-white rounded-2xl p-4 text-center">
-                  <div className="text-2xl font-display font-bold text-ink">50K</div>
-                  <div className="text-xs text-grey">Varicocele</div>
-                </div>
-                <div className="bg-off-white rounded-2xl p-4 text-center">
                   <div className="text-2xl font-display font-bold text-ink">5.6K</div>
                   <div className="text-xs text-grey">Dental</div>
+                </div>
+                <div className="bg-off-white rounded-2xl p-4 text-center">
+                  <div className="text-2xl font-display font-bold text-ink">4</div>
+                  <div className="text-xs text-grey">Brands</div>
                 </div>
               </div>
               <div className="flex items-center gap-3 bg-ink text-off-white rounded-2xl p-4">
@@ -270,6 +278,26 @@ export default function App() {
         </div>
       </section>
 
+      {/* 1.5 STATS BAND */}
+      <section className="pb-8">
+        <div className="max-w-7xl mx-auto px-6">
+          <Reveal>
+            <div className="grid grid-cols-3 gap-4 bg-ink text-off-white rounded-3xl px-6 py-8 md:py-10">
+              {[
+                { value: "200K+", label: "Combined reel views" },
+                { value: "6", label: "Reels produced" },
+                { value: "4", label: "Brands & practices" },
+              ].map((s, i) => (
+                <div key={i} className="text-center">
+                  <div className="text-3xl md:text-5xl font-display font-bold text-mango">{s.value}</div>
+                  <div className="text-sm md:text-base text-off-white/70 mt-1">{s.label}</div>
+                </div>
+              ))}
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       {/* 2. PROBLEM SECTION */}
       <section className="py-24 bg-ink text-off-white">
         <div className="max-w-7xl mx-auto px-6">
@@ -279,7 +307,7 @@ export default function App() {
               <span className="text-mango">Strategy</span> Problem.
             </h2>
             <p className="text-xl text-off-white/60 max-w-2xl mx-auto">
-              You might have a great product or service. But without consistent visibility and clear
+              You might be excellent at what you do. But without consistent visibility and clear
               positioning, your audience never builds trust.
             </p>
           </Reveal>
@@ -320,9 +348,9 @@ export default function App() {
                 We Build Systems That Make You Seen, Trusted, and Chosen.
               </h2>
               <p className="text-xl text-grey mb-8">
-                Forge Studios is not just a content agency. We design a structured approach to
-                content creation, distribution, and positioning — so your practice grows with
-                consistency.
+                Fordge Studios is not just a content agency. We design a structured approach to
+                content creation, distribution, and positioning — so your practice or firm grows
+                with consistency.
               </p>
               <div className="p-6 bg-soft-yellow rounded-2xl border-l-4 border-mango">
                 <p className="text-xl font-bold text-ink">
@@ -335,7 +363,7 @@ export default function App() {
                 <div className="aspect-video rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-br from-ink via-ink to-grey flex items-center justify-center">
                   <div className="text-center px-8">
                     <div className="text-mango text-5xl md:text-6xl font-display font-bold mb-2">
-                      250K+
+                      200K+
                     </div>
                     <p className="text-off-white/80 font-medium">
                       combined views across recent medical reels
@@ -494,7 +522,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <Reveal>
-              <h2 className="text-4xl md:text-6xl mb-8">Why Forge Studios?</h2>
+              <h2 className="text-4xl md:text-6xl mb-8">Why Fordge Studios?</h2>
               <div className="space-y-6">
                 {[
                   "We focus on positioning, not just posting",
@@ -513,9 +541,10 @@ export default function App() {
               </p>
             </Reveal>
             <Reveal delay={120}>
-              <div className="relative aspect-square md:aspect-auto md:h-full min-h-[300px] bg-ink rounded-[3rem] overflow-hidden shadow-2xl">
+              <div className="relative aspect-square md:aspect-auto md:h-full min-h-[320px] bg-gradient-to-br from-ink via-ink to-[#2a2a2a] rounded-[3rem] overflow-hidden shadow-2xl">
+                <Award className="absolute -bottom-8 -right-8 text-mango/10" size={220} strokeWidth={1.5} />
                 <div className="relative z-10 p-12 h-full flex flex-col justify-center">
-                  <h3 className="text-3xl mb-6 text-mango">The Forge Difference</h3>
+                  <h3 className="text-3xl mb-6 text-mango">The Fordge Difference</h3>
                   <p className="text-lg text-off-white opacity-90 leading-relaxed">
                     Most agencies focus on vanity metrics. We focus on market authority. We don't
                     just want you to be seen; we want you to be respected.
@@ -532,15 +561,15 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center">
             <Reveal>
-              <h2 className="text-4xl md:text-6xl mb-8">About Forge Studios</h2>
+              <h2 className="text-4xl md:text-6xl mb-8">About Fordge Studios</h2>
               <p className="text-xl text-grey leading-relaxed mb-8">
-                Forge Studios was built with one goal — to help professionals grow by becoming brands
-                people trust. We believe visibility without positioning is noise, and content without
-                strategy is wasted effort.
+                Fordge Studios was built with one goal — to help professionals grow by becoming
+                brands people trust. We believe visibility without positioning is noise, and content
+                without strategy is wasted effort.
               </p>
               <p className="text-xl text-grey leading-relaxed">
-                We focus on building strong, consistent, and scalable brand presence through
-                structured content systems — with a special focus on doctors and healthcare experts.
+                We build strong, consistent, and scalable brand presence through structured content
+                systems — for doctors, law firms and businesses ready to lead their market.
               </p>
             </Reveal>
           </div>
@@ -553,7 +582,7 @@ export default function App() {
           <Reveal className="h-full">
             <div className="h-full bg-gradient-to-br from-mango to-soft-yellow p-10 md:p-14 rounded-[3rem] shadow-2xl shadow-mango/20 flex flex-col justify-center">
               <h2 className="text-4xl md:text-5xl mb-6">
-                Ready to Turn Your Practice Into a Brand?
+                Ready to Turn Your Business Into a Brand?
               </h2>
               <p className="text-xl font-medium mb-10 opacity-80">
                 Let’s build your visibility and authority system. Tell us a little about your work
@@ -561,7 +590,7 @@ export default function App() {
               </p>
               <div className="space-y-4">
                 <a
-                  href={wa("Hi Forge Studios! I'd like to discuss a project.")}
+                  href={wa("Hi Fordge Studios! I'd like to discuss a project.")}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 bg-ink text-off-white px-6 py-4 rounded-2xl font-bold hover:scale-[1.02] transition-transform"
@@ -592,9 +621,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-4 gap-12 mb-16">
             <div className="col-span-2">
-              <div className="text-3xl font-display font-bold mb-6">
-                FORGE<span className="text-mango">STUDIOS</span>
-              </div>
+              <Logo className="text-3xl block mb-6" />
               <p className="text-xl text-grey max-w-sm">“Building Brands That People Trust.”</p>
             </div>
             <div>
@@ -611,7 +638,7 @@ export default function App() {
               <h4 className="font-bold mb-6 uppercase tracking-widest text-sm">Connect</h4>
               <ul className="space-y-4 text-grey">
                 <li>
-                  <a href={wa("Hi Forge Studios! I'm reaching out from your website.")} target="_blank" rel="noopener noreferrer" className="hover:text-mango transition-colors">WhatsApp</a>
+                  <a href={wa("Hi Fordge Studios! I'm reaching out from your website.")} target="_blank" rel="noopener noreferrer" className="hover:text-mango transition-colors">WhatsApp</a>
                 </li>
                 <li>
                   <a href={INSTAGRAM} target="_blank" rel="noopener noreferrer" className="hover:text-mango transition-colors">Instagram</a>
@@ -626,7 +653,7 @@ export default function App() {
             </div>
           </div>
           <div className="pt-8 border-t border-ink/5 flex flex-col md:flex-row justify-between items-center gap-4 text-grey/60 text-sm">
-            <p>© 2026 Forge Studios. All rights reserved.</p>
+            <p>© 2026 Fordge Studios. All rights reserved.</p>
             <div className="flex gap-8">
               <a href="/privacy.html" className="hover:text-ink">Privacy Policy</a>
               <a href="/terms.html" className="hover:text-ink">Terms of Service</a>

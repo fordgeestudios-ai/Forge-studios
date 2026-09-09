@@ -20,7 +20,7 @@ export default function Navbar() {
           animate={{ opacity: 1, x: 0 }}
           className="text-2xl font-display font-bold tracking-tighter"
         >
-          FORGE<span className="text-mango">STUDIOS</span>
+          <span className="text-mango">FORDGE</span><span className="text-ink">STUDIOS</span>
         </motion.div>
 
         {/* Desktop Nav */}
@@ -38,7 +38,7 @@ export default function Navbar() {
             </motion.a>
           ))}
           <motion.a
-            href="https://wa.me/917542878967?text=Hi%20Forge%20Studios!%20I'd%20like%20to%20get%20started%20with%20your%20services."
+            href="https://wa.me/917542878967?text=Hi%20Fordge%20Studios!%20I'd%20like%20to%20get%20started%20with%20your%20services."
             target="_blank"
             rel="noopener noreferrer"
             initial={{ opacity: 0, scale: 0.9 }}
@@ -73,7 +73,7 @@ export default function Navbar() {
             </a>
           ))}
           <a 
-            href="https://wa.me/917542878967?text=Hi%20Forge%20Studios!%20I'd%20like%20to%20get%20started%20with%20your%20services."
+            href="https://wa.me/917542878967?text=Hi%20Fordge%20Studios!%20I'd%20like%20to%20get%20started%20with%20your%20services."
             target="_blank"
             rel="noopener noreferrer"
             className="bg-mango text-ink px-6 py-4 rounded-xl text-lg font-bold text-center"
