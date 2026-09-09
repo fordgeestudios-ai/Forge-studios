@@ -260,8 +260,8 @@ export default function App() {
                   <div className="text-xs text-grey">Dental</div>
                 </div>
                 <div className="bg-off-white rounded-2xl p-4 text-center">
-                  <div className="text-2xl font-display font-bold text-ink">4</div>
-                  <div className="text-xs text-grey">Brands</div>
+                  <div className="text-2xl font-display font-bold text-ink">100+</div>
+                  <div className="text-xs text-grey">Videos</div>
                 </div>
               </div>
               <div className="flex items-center gap-3 bg-ink text-off-white rounded-2xl p-4">
@@ -284,9 +284,9 @@ export default function App() {
           <Reveal>
             <div className="grid grid-cols-3 gap-4 bg-ink text-off-white rounded-3xl px-6 py-8 md:py-10">
               {[
-                { value: "200K+", label: "Combined reel views" },
-                { value: "6", label: "Reels produced" },
-                { value: "4", label: "Brands & practices" },
+                { value: "100+", label: "Videos produced" },
+                { value: "150K", label: "Views on our top reel" },
+                { value: "4+", label: "Brands & practices" },
               ].map((s, i) => (
                 <div key={i} className="text-center">
                   <div className="text-3xl md:text-5xl font-display font-bold text-mango">{s.value}</div>
@@ -471,8 +471,8 @@ export default function App() {
           <Reveal className="text-center mb-16">
             <h2 className="text-4xl md:text-6xl mb-4">Our Work</h2>
             <p className="text-xl text-grey max-w-2xl mx-auto">
-              Content we’ve produced for doctors, clinics and growing brands — explaining complex
-              topics in a way people actually watch.
+              A few highlights from the 100+ videos we’ve produced for doctors, clinics and growing
+              brands — explaining complex topics in a way people actually watch.
             </p>
           </Reveal>
 
@@ -485,7 +485,8 @@ export default function App() {
           </div>
 
           <p className="text-center text-sm text-grey/60 mt-8 max-w-2xl mx-auto">
-            View counts reflect the reach of individual reels we produced during our engagements.
+            A selection from 100+ videos produced across our engagements. View counts reflect the
+            reach of these individual reels.
           </p>
         </div>
       </section>
