@@ -1,3 +1,5 @@
+/* Google Fonts must be imported before any other rules, or the browser ignores it. */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap');
 @import "tailwindcss";
 
 @theme {
@@ -6,7 +8,7 @@
   --color-off-white: #FAFAFA;
   --color-ink: #1A1A1A;
   --color-grey: #4A4A4A;
-  
+
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Space Grotesk", sans-serif;
 }
@@ -18,10 +20,41 @@
   body {
     @apply bg-off-white text-ink font-sans antialiased;
   }
-  
+
   h1, h2, h3, h4, h5, h6 {
     @apply font-display font-bold tracking-tight;
   }
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap');
+/* Reliable scroll-reveal: content is only hidden while JS is active and
+   is revealed by an IntersectionObserver (see the Reveal component). If JS
+   never runs, the .no-js fallback keeps everything visible. */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-16px); }
+}
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .animate-float {
+    animation: none;
+  }
+}
