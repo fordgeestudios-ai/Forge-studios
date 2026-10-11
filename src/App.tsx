@@ -100,8 +100,6 @@ type ReelItem = {
 };
 
 const REELS: ReelItem[] = [
-  { code: "Dac8v3lSzet", client: "Dr. Gaurav Gangwani", topic: "Spider veins explained", metric: "150K views" },
-  { code: "DbGJbG9quhE", client: "Dr. Gaurav Gangwani", topic: "BPH (enlarged prostate)", metric: "50K views" },
   { code: "DdB2hP-CDpq", client: "Pinhole Endovascular", topic: "When is varicose veins treated?", metric: "New" },
   { code: "DcOdBZWj0h_", client: "Toothfluencer Dental", topic: "Tooth gems", metric: "5.6K views" },
   { code: "DPsq9mYER_1", client: "The Moment Makers", topic: "Event highlight", metric: "Events" },
